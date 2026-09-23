@@ -1,0 +1,349 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   NUCLEUS DESIGN SYSTEM
+   Premium enterprise compliance brand
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  /* shadcn tokens */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Nucleus brand */
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-soft: var(--navy-soft);
+  --color-royal: var(--royal);
+  --color-royal-soft: var(--royal-soft);
+  --color-ice: var(--ice);
+  --color-silver: var(--silver);
+  --color-ink: var(--ink);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Nucleus brand palette */
+  --navy: #071B3A;          /* primary navy */
+  --navy-deep: #030d22;     /* near-black navy for cinematic sections */
+  --navy-soft: #0f2750;     /* lighter navy */
+  --royal: #0E63FF;         /* royal blue accent */
+  --royal-soft: #3b82f6;    /* softer blue */
+  --ice: #EAF4FF;           /* ice blue background */
+  --silver: #F8FAFC;        /* silver white */
+  --ink: #0a0f1e;           /* deep ink */
+
+  /* shadcn semantic tokens — mapped to Nucleus palette (light mode = silver/ice) */
+  --background: #F8FAFC;
+  --foreground: #071B3A;
+  --card: #FFFFFF;
+  --card-foreground: #071B3A;
+  --popover: #FFFFFF;
+  --popover-foreground: #071B3A;
+  --primary: #071B3A;
+  --primary-foreground: #F8FAFC;
+  --secondary: #EAF4FF;
+  --secondary-foreground: #071B3A;
+  --muted: #EEF2F7;
+  --muted-foreground: #4b5e7d;
+  --accent: #0E63FF;
+  --accent-foreground: #FFFFFF;
+  --destructive: #c0392b;
+  --border: #dbe4f1;
+  --input: #dbe4f1;
+  --ring: #0E63FF;
+  --chart-1: #0E63FF;
+  --chart-2: #071B3A;
+  --chart-3: #3b82f6;
+  --chart-4: #94b8e3;
+  --chart-5: #EAF4FF;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #071B3A;
+  --sidebar-primary: #071B3A;
+  --sidebar-primary-foreground: #F8FAFC;
+  --sidebar-accent: #EAF4FF;
+  --sidebar-accent-foreground: #071B3A;
+  --sidebar-border: #dbe4f1;
+  --sidebar-ring: #0E63FF;
+}
+
+.dark {
+  --background: #030d22;
+  --foreground: #F8FAFC;
+  --card: #071B3A;
+  --card-foreground: #F8FAFC;
+  --popover: #071B3A;
+  --popover-foreground: #F8FAFC;
+  --primary: #F8FAFC;
+  --primary-foreground: #071B3A;
+  --secondary: #0f2750;
+  --secondary-foreground: #F8FAFC;
+  --muted: #0f2750;
+  --muted-foreground: #94b8e3;
+  --accent: #0E63FF;
+  --accent-foreground: #F8FAFC;
+  --destructive: #e74c3c;
+  --border: rgba(148, 184, 227, 0.16);
+  --input: rgba(148, 184, 227, 0.2);
+  --ring: #0E63FF;
+  --sidebar: #071B3A;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #F8FAFC;
+  --sidebar-primary-foreground: #071B3A;
+  --sidebar-accent: #0f2750;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: rgba(148, 184, 227, 0.16);
+  --sidebar-ring: #0E63FF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+  ::selection {
+    background-color: var(--royal);
+    color: #fff;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .text-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(2.75rem, 6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+  .text-headline {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  .text-title {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+  .text-eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .text-mono-label {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .text-lede {
+    font-size: clamp(1.0625rem, 1.4vw, 1.375rem);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .container-nucleus {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-nucleus { padding-inline: 2rem; }
+  }
+  @media (min-width: 1280px) {
+    .container-nucleus { padding-inline: 3rem; }
+  }
+
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* hairline divider used throughout */
+  .hairline {
+    background-image: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    height: 1px;
+  }
+
+  /* subtle grid background */
+  .bg-grid-navy {
+    background-image:
+      linear-gradient(to right, rgba(148, 184, 227, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 184, 227, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .bg-grid-ice {
+    background-image:
+      linear-gradient(to right, rgba(7, 27, 58, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(7, 27, 58, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* radial glow */
+  .bg-glow-royal {
+    background: radial-gradient(60% 60% at 50% 40%, rgba(14, 99, 255, 0.18), transparent 70%);
+  }
+  .bg-glow-navy {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(7, 27, 58, 0.35), transparent 70%);
+  }
+
+  /* link underline reveal */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  /* arrow nudge */
+  .arrow-nudge {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group:hover .arrow-nudge,
+  [data-arrow]:hover .arrow-nudge {
+    transform: translateX(4px);
+  }
+
+  /* premium glass */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glass-panel-light {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(7, 27, 58, 0.06);
+  }
+
+  /* custom scrollbar */
+  .scroll-premium::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scroll-premium::-webkit-scrollbar-track { background: transparent; }
+  .scroll-premium::-webkit-scrollbar-thumb {
+    background: rgba(148, 184, 227, 0.3);
+    border-radius: 999px;
+  }
+  .scroll-premium::-webkit-scrollbar-thumb:hover { background: rgba(148, 184, 227, 0.5); }
+}
+
+/* ============================================================
+   KEYFRAME LIBRARY (restrained, premium motion)
+   ============================================================ */
+@keyframes nucleus-orbit-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes nucleus-pulse-soft {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+@keyframes nucleus-line-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes nucleus-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes nucleus-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-orbit-slow { animation: nucleus-orbit-slow 120s linear infinite; }
+.animate-pulse-soft { animation: nucleus-pulse-soft 4s ease-in-out infinite; }
+.animate-float { animation: nucleus-float 7s ease-in-out infinite; }
+.animate-marquee { animation: nucleus-marquee 40s linear infinite; }
+
+/* reveal helpers used with framer/gsap fallback */
+.reveal-mask { overflow: hidden; }
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-orbit-slow,
+  .animate-float,
+  .animate-marquee,
+  .animate-pulse-soft { animation: none !important; }
+}
