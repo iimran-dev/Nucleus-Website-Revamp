@@ -10,7 +10,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
  * Right: layered image ecosystem (engine / architecture / medical / digital compliance).
  */
 export function Hero() {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotion() ?? false;
   const ref = useRef<HTMLDivElement | null>(null);
 
   // subtle parallax for layered image stack
@@ -126,34 +126,6 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4 arrow-nudge" strokeWidth={1.75} />
               </a>
             </motion.div>
-
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.7 }}
-              className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 max-w-2xl"
-            >
-              {[
-                ["500+", "Organizations", true],
-                ["20+", "Industries", false],
-                ["100+", "Certifications", false],
-                ["4.8/5", "Client Rating", false],
-              ].map(([n, l, hero]) => (
-                <div key={l as string} className="border-l-2 border-[var(--royal)]/40 pl-4">
-                  <div
-                    className={`font-display tracking-[-0.02em] text-[var(--navy)] ${
-                      hero ? "text-3xl sm:text-4xl font-bold" : "text-2xl font-semibold"
-                    }`}
-                  >
-                    {n}
-                  </div>
-                  <div className="text-mono-label text-[var(--muted-foreground)] mt-1">
-                    {l}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
           </div>
 
           {/* RIGHT — Layered visual ecosystem */}
@@ -251,15 +223,6 @@ function HeroVisual({ reduced }: { reduced: boolean }) {
         style={{ transform: reduced ? undefined : `translate3d(${tx}, ${ty}, 0)` }}
         aria-hidden="true"
       >
-        <div className="flex items-center gap-2">
-          <div className="grid place-items-center h-6 w-6 rounded-full bg-[var(--royal)]/30 border border-white/20">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--royal)] animate-pulse-soft" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-mono-label text-[0.58rem] text-white/70">LIVE AUDIT</div>
-            <div className="text-[0.7rem] font-medium">CREQAI · 98.7% Ready</div>
-          </div>
-        </div>
       </motion.div>
 
       {/* decorative orbital ring SVG */}

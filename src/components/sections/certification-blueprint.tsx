@@ -28,7 +28,7 @@ const PATHS = [
 ] as const;
 
 export function CertificationBlueprint() {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotion() ?? false;
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -97,8 +97,8 @@ export function CertificationBlueprint() {
                 const mx = (a.x + b.x) / 2;
                 const my = (a.y + b.y) / 2;
                 // slight curvature
-                const cx = mx + (Math.cos(i * 1.7) * 30);
-                const cy = my + (Math.sin(i * 1.3) * 24);
+                const cx = Math.round((mx + Math.cos(i * 1.7) * 30) * 100) / 100;
+                const cy = Math.round((my + Math.sin(i * 1.3) * 24) * 100) / 100;
                 const d = `M ${a.x} ${a.y} Q ${cx} ${cy} ${b.x} ${b.y}`;
                 const start = 0.15 + (i / PATHS.length) * 0.4;
                 const end = start + 0.08;

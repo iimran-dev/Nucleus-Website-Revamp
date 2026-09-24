@@ -25,8 +25,7 @@ export default function Home() {
         <TrustBar />
         <CertificationOrbit />
         <IndustryExperience />
-        <TransformationEngine />
-        <CertificationBlueprint />
+        <TransformationEngine />  
         <SuccessTheatre />
         <TrustLogos />
         <KnowledgeCenter />
