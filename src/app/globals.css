@@ -11,9 +11,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-display);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans), "Google Sans", "Google Sans Text", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), "Google Sans Code", ui-monospace, monospace;
 
   /* shadcn tokens */
   --color-sidebar-ring: var(--sidebar-ring);
@@ -149,6 +149,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans), "Google Sans", "Google Sans Text", system-ui, -apple-system, sans-serif;
     font-feature-settings: "ss01", "cv01", "cv11";
   }
   ::selection {
@@ -158,48 +159,56 @@
 }
 
 /* ============================================================
-   TYPOGRAPHY UTILITIES
+   TYPOGRAPHY UTILITIES — Google Sans System
    ============================================================ */
 @layer utilities {
+  .font-sans {
+    font-family: var(--font-sans), "Google Sans", "Google Sans Text", system-ui, -apple-system, sans-serif;
+  }
   .font-display {
-    font-family: var(--font-display), system-ui, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display), "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+  }
+  .font-mono {
+    font-family: var(--font-mono), "Google Sans Code", ui-monospace, monospace;
   }
   .text-display {
-    font-family: var(--font-display), system-ui, sans-serif;
+    font-family: var(--font-display), "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
     font-size: clamp(2.75rem, 6vw, 6rem);
     line-height: 0.95;
     letter-spacing: -0.035em;
-    font-weight: 600;
+    font-weight: 700;
   }
   .text-headline {
-    font-family: var(--font-display), system-ui, sans-serif;
+    font-family: var(--font-display), "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
     font-size: clamp(2rem, 4vw, 3.75rem);
     line-height: 1.02;
     letter-spacing: -0.025em;
     font-weight: 600;
   }
   .text-title {
-    font-family: var(--font-display), system-ui, sans-serif;
+    font-family: var(--font-display), "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
     font-size: clamp(1.25rem, 2vw, 1.625rem);
     line-height: 1.15;
     letter-spacing: -0.015em;
     font-weight: 600;
   }
   .text-eyebrow {
-    font-family: var(--font-mono), monospace;
+    font-family: var(--font-mono), "Google Sans Code", monospace;
     font-size: 0.75rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
   }
   .text-mono-label {
-    font-family: var(--font-mono), monospace;
+    font-family: var(--font-mono), "Google Sans Code", monospace;
     font-size: 0.6875rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
+    font-weight: 500;
   }
   .text-lede {
+    font-family: var(--font-sans), "Google Sans", "Google Sans Text", system-ui, -apple-system, sans-serif;
     font-size: clamp(1.0625rem, 1.4vw, 1.375rem);
     line-height: 1.55;
     font-weight: 400;

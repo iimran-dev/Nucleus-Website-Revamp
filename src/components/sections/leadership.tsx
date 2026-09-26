@@ -20,16 +20,16 @@ export function LeadershipSection() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-[0_30px_70px_-30px_rgba(7,27,58,0.4)]">
+            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-[0_30px_70px_-30px_rgba(7,27,58,0.4)] border border-[var(--navy)]/10">
               <img
-                src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/06d45b782410.jpg"
-                alt="Executive portrait of a senior compliance leader"
-                className="absolute inset-0 h-full w-full object-cover grayscale contrast-110"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=85"
+                alt="Executive portrait of Nucleus founding partner and practice lead"
+                className="absolute inset-0 h-full w-full object-cover grayscale contrast-115 brightness-95 transition-transform duration-700 hover:scale-102"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy-deep)]/85 via-[var(--navy-deep)]/20 to-transparent" />
               {/* technical label */}
-              <div className="absolute top-4 left-4 text-mono-label text-white/85 text-[0.6rem]">
+              <div className="absolute top-4 left-4 text-mono-label text-white/90 text-[0.6rem] bg-black/30 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full">
                 / LEADERSHIP · NUCLEUS
               </div>
               <div className="absolute bottom-4 left-4 right-4 text-white">

@@ -25,15 +25,12 @@ export default function Home() {
         <TrustBar />
         <CertificationOrbit />
         <IndustryExperience />
-        <TransformationEngine />  
+        <TransformationEngine />
         <SuccessTheatre />
         <TrustLogos />
         <KnowledgeCenter />
-        <CertificationFinder />
         <CreqAISection />
         <LeadershipSection />
-        <StandardsWall />
-        <InsightsTimeline />
         <FinalCTA />
       </main>
       <Footer />

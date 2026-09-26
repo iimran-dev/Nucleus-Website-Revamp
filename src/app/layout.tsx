@@ -1,25 +1,29 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Google_Sans, Google_Sans_Flex, Google_Sans_Code } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Primary body and UI typography across the website
+const googleSans = Google_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const display = Space_Grotesk({
+// Editorial, high-impact display headlines, hero titles & stats
+const googleSansDisplay = Google_Sans_Flex({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+// Technical monospace, compliance labels, badge tags, and ISO identifiers
+const googleSansCode = Google_Sans_Code({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -63,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${display.variable} ${mono.variable} antialiased bg-background text-foreground`}
+        className={`${googleSans.variable} ${googleSansDisplay.variable} ${googleSansCode.variable} font-sans antialiased bg-background text-foreground`}
       >
         {children}
         <Toaster />
