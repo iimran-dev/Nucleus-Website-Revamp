@@ -72,10 +72,10 @@ export function Hero() {
             <h1 className="font-display text-[clamp(2.6rem,7vw,6rem)] leading-[0.95] tracking-[-0.04em] font-semibold text-[var(--navy)] text-balance">
               <span className="block overflow-hidden">
                 <motion.span variants={word} custom={0} initial="hidden" animate="show" className="inline-block">
-                  COMPLIANCE
+                  Compliance
                 </motion.span>{" "}
                 <motion.span variants={word} custom={1} initial="hidden" animate="show" className="inline-block">
-                  TODAY.
+                  Today.
                 </motion.span>
               </span>
               <span className="block overflow-hidden whitespace-nowrap">
@@ -83,12 +83,12 @@ export function Hero() {
                   A
                 </motion.span>{" "}
                 <motion.span variants={word} custom={3} initial="hidden" animate="show" className="inline-block">
-                  STRONGER
+                  Stronger
                 </motion.span>
               </span>
               <span className="block overflow-hidden">
                 <motion.span variants={word} custom={4} initial="hidden" animate="show" className="inline-block">
-                  TOMORROW.
+                  Tomorrow.
                 </motion.span>
               </span>
             </h1>

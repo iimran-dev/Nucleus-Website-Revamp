@@ -9,6 +9,7 @@ const LOGO_SET = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 export function TrustLogos() {
   return (
     <section
+      id="clients"
       className="relative bg-[var(--navy-deep)] text-white py-14 md:py-18 overflow-hidden border-y border-white/[0.06]"
       aria-label="Trusted by leading organizations"
     >

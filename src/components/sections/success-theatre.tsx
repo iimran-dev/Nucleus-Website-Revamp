@@ -75,6 +75,7 @@ export function SuccessTheatre() {
 
   return (
     <section
+      id="stories"
       className="relative py-24 lg:py-32 bg-[var(--silver)] overflow-hidden"
       aria-label="Client success stories"
     >
